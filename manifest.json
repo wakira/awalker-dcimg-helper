@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "awalker dcimg helper",
+  "description": "Helps you download full-sized images from dcimg.awalker.jp",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "contextMenus",
+    "downloads",
+    "http://dcimg.awalker.jp/"
+  ],
+  "icons": {
+    "128": "icon-large.png"
+  }
+}
