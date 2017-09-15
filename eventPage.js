@@ -1,10 +1,8 @@
-﻿chrome.runtime.onInstalled.addListener(function() {
-  chrome.contextMenus.create({
-    title: 'フルサイズで保存',
-    id: 'awalker-down-menu',
-    contexts: ['link','image'],
-    targetUrlPatterns: ['http://dcimg.awalker.jp/img1.php?id=*','http://dcimg.awalker.jp/img2.php?sec_key=*']
-  })
+﻿chrome.contextMenus.create({
+  title: 'フルサイズで保存',
+  id: 'awalker-down-menu',
+  contexts: ['link','image'],
+  targetUrlPatterns: ['http://dcimg.awalker.jp/img1.php?id=*','http://dcimg.awalker.jp/img2.php?sec_key=*']
 })
 
 function downloadFromImg1(url) {
