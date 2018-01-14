@@ -9,7 +9,7 @@ function downloadFromImg1(url) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, false);
   xhr.send();
-  img5Url = url.replace(/dcimg\.awalker\.jp\/img1\.php\?id=/,'dcimg.awalker.jp/img5.php?sec_key=');
+  var img5Url = url.replace(/dcimg\.awalker\.jp\/img1\.php\?id=/,'dcimg.awalker.jp/img5.php?sec_key=');
   chrome.downloads.download({
     url: img5Url,
     saveAs: true
@@ -25,10 +25,12 @@ function downloadFromImg2(url) {
 }
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
+  console.log("WTF");
   if (info.menuItemId === "awalker-down-menu") {
-    if (!(info.linkUrl === undefined)) {
+    console.log(info);
+    if (!(info.linkUrl === undefined) && info.linkUrl != "") {
       downloadFromImg1(info.linkUrl);
-    } else if (!(info.srcUrl === undefined)) {
+    } else if (!(info.srcUrl === undefined) && info.srcUrl != "") {
       downloadFromImg2(info.srcUrl);
     }
   }
