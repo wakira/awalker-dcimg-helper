@@ -3,7 +3,7 @@
 
   "name": "awalker dcimg helper",
   "description": "Helps you download full-sized images from dcimg.awalker.jp",
-  "version": "1.0.2",
+  "version": "1.1.0",
 
   "background": {
     "scripts": ["eventPage.js"],
@@ -11,6 +11,7 @@
   },
   "permissions": [
     "contextMenus",
+    "storage",
     "downloads",
     "http://dcimg.awalker.jp/"
   ],
