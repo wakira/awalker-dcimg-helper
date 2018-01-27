@@ -38,9 +38,11 @@ function todayStr() {
 function download(img5Url) {
   chrome.storage.local.get({lastDay: todayStr(), nextChar: 'a'}, function(data) {
     var thisChar = data.nextChar;
-    var nextChar = 'a';
+    var nextChar = 'b';
     if (data.lastDay == todayStr()) {
       nextChar = nextLetter(thisChar);
+    } else {
+      thisChar = 'a';
     }
     chrome.storage.local.set({lastDay: todayStr(), nextChar: nextChar}, function() {
       chrome.downloads.download({
